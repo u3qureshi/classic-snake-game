@@ -96,7 +96,13 @@ function moveSnakeForward() {
     //const array1 = [1, 2, 3];
     //console.log(array1.unshift(4, 5));
     snake.unshift(head); //This adds this new object to the HEAD of the snake-array-of-objects
-
+    if (snake[0].x == foodXCoordinate && snake[0].y == foodYCoordinate) { //If head of the snake x,y match food x,y
+        score++;
+        scoreText.innerText = `SCORE: ${score}`;
+        //Now create food at a new location
+        createFood();
+    } else
+        snake.pop();
 
 }
 
@@ -111,7 +117,9 @@ function drawSnake() {
     });
 }
 
-function changeDirection() {
+
+function changeDirection(e) {
+
 
 }
 
