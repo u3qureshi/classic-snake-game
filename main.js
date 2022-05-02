@@ -4,7 +4,7 @@ const scoreText = document.querySelector('.score-text');
 const restartButton = document.querySelector('.restart-button');
 const boardWidth = board.width;
 const boardHeight = board.height;
-const boardBackgroundColor = 'rgba(157, 243, 157, 0.6)';
+const boardBackgroundColor = 'rgb(195, 249, 195)';
 const snakeColor = 'darkgreen';
 const snakeBorderColor = 'white';
 const foodColor = 'rgb(163, 127, 127)';
@@ -46,7 +46,7 @@ function nextTick() {
         setTimeout(() => {
             clearBoard();
             drawFood();
-            moveSnake();
+            moveSnakeForward();
             drawSnake();
             checkGameOver();
             nextTick();
@@ -88,9 +88,15 @@ function drawBorder(x, y, width, height) {
 }
 
 
-function moveSnake() {
+function moveSnakeForward() {
 
     //create a new head in the direction we are moving and then eliminate the tail
+    const head = { x: snake[0].x + xVelocity, y: snake[0].y + yVelocity };
+    //The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+    //const array1 = [1, 2, 3];
+    //console.log(array1.unshift(4, 5));
+    snake.unshift(head); //This adds this new object to the HEAD of the snake-array-of-objects
+
 
 }
 

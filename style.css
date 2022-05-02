@@ -41,7 +41,7 @@ body {
 
 #my-canvas {
     border: 5px groove black;
-    background: rgba(157, 243, 157, 0.6);
+    background: rgb(195, 249, 195);
 }
 
 .restart-button {
