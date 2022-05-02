@@ -2,6 +2,8 @@ const board = document.querySelector('#my-canvas');
 const context = board.getContext('2d');
 const scoreText = document.querySelector('.score-text');
 const restartButton = document.querySelector('.restart-button');
+const pauseButton = document.querySelector('.pause-button');
+const gameOverSign = document.querySelector('.game-over-sign');
 const boardWidth = board.width;
 const boardHeight = board.height;
 const boardBackgroundColor = 'rgb(195, 249, 195)';
@@ -28,16 +30,16 @@ let snake = [
 
 window.addEventListener('keydown', changeDirection);
 restartButton.addEventListener('click', restartGame);
-
-initializeGame();
+pauseButton.addEventListener('click', pauseGame);
 
 function initializeGame() {
 
-    running = true;
-    scoreText.innerText = `SCORE: ${score}`;
-    createFood();
-    drawFood();
-    nextTick();
+    if (running) {
+        scoreText.innerText = `SCORE: ${score}`;
+        createFood();
+        drawFood();
+        nextTick();
+    }
 }
 
 function nextTick() {
@@ -152,12 +154,18 @@ function changeDirection(e) {
 
 function checkGameOver() {
 
+    if ((snake[0].x < 0) || (snake[0].x >= 500) || (snake[0].y < 0) || (snake[0].y > 500)) {
+        running = false;
+        gameOverSign.style.visibility = 'visible';
+    }
 }
 
-function displayGameOver() {
-
-}
 
 function restartGame() {
+    window.location.reload();
+}
 
+function pauseGame() {
+    running = !running;
+    initializeGame();
 }
