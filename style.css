@@ -1,0 +1,81 @@
+html {
+    background: url(./images/bi.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+* {
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: x-large;
+}
+
+body {
+    background-color: transparent;
+}
+
+#main-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 80px;
+    letter-spacing: 9px;
+    margin: 0;
+}
+
+#container {
+    text-align: center;
+}
+
+.score-text {
+    font-size: 60px;
+    margin: -10px;
+}
+
+#my-canvas {
+    border: 3px solid black;
+    width: 500px;
+    height: 500px;
+}
+
+.restart-button {
+    text-align: center;
+    font-size: xx-large;
+    transition: ease-out 0.4s;
+    border: 5px solid darkgreen;
+    background-color: rgba(77, 255, 0, 0.326);
+    position: relative;
+    z-index: 1;
+    margin: 0px;
+}
+
+.restart-button:hover {
+    cursor: pointer;
+}
+
+.restart-button::before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    right: 50%;
+    bottom: 0%;
+    opacity: 0;
+    content: '';
+    background-color: rgba(43, 255, 0, 0.692);
+}
+
+.restart-button:hover::before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+}
