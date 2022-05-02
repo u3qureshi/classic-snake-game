@@ -2,8 +2,19 @@ const board = document.querySelector('#my-canvas');
 const context = board.getContext('2d');
 const scoreText = document.querySelector('.score-text');
 const restartButton = document.querySelector('.restart-button');
-const pauseButton = document.querySelector('.pause-button');
+const playButton = document.querySelector('.pause-button');
 const gameOverSign = document.querySelector('.game-over-sign');
+const radioButtons = document.querySelectorAll('input');
+for (const radio of radioButtons) {
+    radio.onclick = (e) => {
+        if (e.target.value == 'EASY')
+            speed = 140;
+        else if (e.target.value == 'MEDIUM')
+            speed = 95;
+        else if (e.target.value == 'HARD')
+            speed = 65;
+    }
+}
 const boardWidth = board.width;
 const boardHeight = board.height;
 const boardBackgroundColor = 'rgb(195, 249, 195)';
@@ -12,6 +23,7 @@ const snakeBorderColor = 'white';
 const foodColor = 'rgb(163, 127, 127)';
 const foodBorderColor = 'darkred';
 const unitSize = 25;
+let speed = 125;
 let running = false;
 let xVelocity = unitSize;
 let yVelocity = 0;
@@ -20,17 +32,17 @@ let foodYCoordinate;
 let score = 0;
 //Snake is an array of objects. Each snake segment is an object containing x and y coordinates.
 let snake = [
-    { x: 0, y: 0 },
-    { x: unitSize * 1, y: 0 },
-    { x: unitSize * 2, y: 0 },
-    { x: unitSize * 3, y: 0 },
+    { x: unitSize * 5, y: 0 },
     { x: unitSize * 4, y: 0 },
-    { x: unitSize * 5, y: 0 }
+    { x: unitSize * 3, y: 0 },
+    { x: unitSize * 2, y: 0 },
+    { x: unitSize * 1, y: 0 },
+    { x: 0, y: 0 }
 ];
 
 window.addEventListener('keydown', changeDirection);
 restartButton.addEventListener('click', restartGame);
-pauseButton.addEventListener('click', pauseGame);
+playButton.addEventListener('click', playGame);
 
 function initializeGame() {
 
@@ -51,8 +63,8 @@ function nextTick() {
             moveSnakeForward();
             drawSnake();
             checkGameOver();
-            nextTick();
-        }, 100);
+            nextTick(); //Recursive call
+        }, speed);
     } else
         displayGameOver();
 }
@@ -70,7 +82,7 @@ function createFood() {
         return randomNum;
     }
     foodXCoordinate = randomFood(0, boardWidth - unitSize);
-    foodYCoordinate = randomFood(0, boardWidth - unitSize);
+    foodYCoordinate = randomFood(0, boardHeight - unitSize);
 
 }
 
@@ -125,6 +137,7 @@ function drawSnake() {
 //40=bottom key
 function changeDirection(e) {
     const keyDown = e.keyCode;
+    e.preventDefault();
     const leftKey = 37;
     const upKey = 38;
     const rightKey = 39;
@@ -154,9 +167,14 @@ function changeDirection(e) {
 
 function checkGameOver() {
 
-    if ((snake[0].x < 0) || (snake[0].x >= 500) || (snake[0].y < 0) || (snake[0].y > 500)) {
+    if ((snake[0].x < 0) || (snake[0].x >= boardWidth) || (snake[0].y < 0) || (snake[0].y >= boardHeight))
         running = false;
-        gameOverSign.style.visibility = 'visible';
+
+    for (let i = 1; i < snake.length; i++) {
+        //If the head (x, y) of the snake == any body part (x, y) --> gg
+        if ((snake[i].x == snake[0].x) && (snake[i].y == snake[0].y)) {
+            running = false;
+        }
     }
 }
 
@@ -165,7 +183,12 @@ function restartGame() {
     window.location.reload();
 }
 
-function pauseGame() {
-    running = !running;
+function playGame() {
+    running = true;
     initializeGame();
+}
+
+function displayGameOver() {
+    running = false;
+    gameOverSign.style.visibility = 'visible';
 }

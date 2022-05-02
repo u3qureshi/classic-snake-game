@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>SnakeGame</title>
     <link href="http://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -15,15 +16,44 @@
     <div id="main-container">
         <h1 class="title">SNAKE 🐍</h1>
         <div id="container">
-            <canvas id="my-canvas" width="500" height="500"></canvas>
+            <div class="center-container">
+
+                <canvas id="my-canvas" width="800" height="500"></canvas>
+                <div class="difficulty-container">
+                    <div>SELECT DIFFICULTY:</div>
+                    <form>
+                        <div class="radio">
+                            <input type="radio" id="easy-button" name="fav_language" value="EASY">
+                            <label for="easy-button">EASY</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="medium-button" name="fav_language" value="MEDIUM">
+                            <label for="medium-button">MEDIUM</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="hard-button" name="fav_language" value="HARD">
+                            <label for="hard-button">HARD</label>
+                        </div>
+
+                    </form>
+                    <button class="pause-button">PLAY GAME</button>
+                </div>
+
+            </div>
+
             <div class="score-text">SCORE: 0</div>
-            <button class="pause-button">PLAY GAME</button>
             <div class="game-over-sign">
                 <img class="game-over-img" src="./images/Game-Over.png" alt="GAME OVER">
                 <button class="restart-button">RESTART</button>
             </div>
+
         </div>
+        <h5 id="copyright">
+            Copyright © 2022 UsmanQureshi
+            <a href="https://github.com/u3qureshi/EtchASketch" target="_blank" class="fa fa-github" style="font-size: 1.3em;"></a>
+        </h5>
     </div>
+
 
 
     <script src="main.js"></script>

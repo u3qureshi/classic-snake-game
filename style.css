@@ -40,7 +40,7 @@ body {
 }
 
 #my-canvas {
-    border: 5px groove black;
+    border: 10px ridge darkgreen;
     background: rgb(195, 249, 195);
 }
 
@@ -48,11 +48,11 @@ body {
     text-align: center;
     font-size: xx-large;
     transition: ease-out 0.4s;
-    border: 5px solid darkgreen;
-    background-color: rgba(77, 255, 0, 0.326);
+    border: 5px ridge darkblue;
+    background-color: rgba(0, 255, 255, 0.454);
     position: relative;
     z-index: 1;
-    margin: 0px;
+    margin: 10px;
 }
 
 .pause-button:hover {
@@ -68,7 +68,7 @@ body {
     bottom: 0%;
     opacity: 0;
     content: '';
-    background-color: rgba(43, 255, 0, 0.692);
+    background-color: aqua;
 }
 
 .pause-button:hover::before {
@@ -83,7 +83,7 @@ body {
     text-align: center;
     font-size: xx-large;
     transition: ease-out 0.4s;
-    border: 5px solid darkgoldenrod;
+    border: 5px ridge darkgoldenrod;
     background-color: rgba(242, 255, 0, 0.537);
     position: relative;
     z-index: 1;
@@ -120,6 +120,66 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: -600px;
+    margin-top: -450px;
     visibility: hidden;
+}
+
+img {
+    width: 400px;
+    height: auto;
+    justify-content: center;
+    display: flex;
+    align-self: center;
+}
+
+.difficulty-container {
+    margin: auto;
+    border: 5px ridge darkgreen;
+    width: 20%;
+    height: fit-content;
+    padding: 10px;
+    background-color: rgba(43, 255, 0, 0.345);
+    display: flex;
+    flex-direction: column;
+}
+
+.radio {
+    margin: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.center-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25%;
+}
+
+#copyright {
+    position: fixed;
+    text-align: center;
+    bottom: 0px;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 2px;
+    color: black;
+}
+
+.fa {
+    padding-left: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: blue;
+}
+
+
+/* Add a hover effect if you want */
+
+.fa:hover {
+    color: green;
+    transition: 0.5s;
+    transform: scale(1.4);
 }
