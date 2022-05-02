@@ -117,9 +117,36 @@ function drawSnake() {
     });
 }
 
-
+//37=left key
+//38=up key
+//39=right key
+//40=bottom key
 function changeDirection(e) {
+    const keyDown = e.keyCode;
+    const leftKey = 37;
+    const upKey = 38;
+    const rightKey = 39;
+    const downKey = 40;
 
+    const movingUp = (yVelocity == -unitSize);
+    const movingDown = (yVelocity == unitSize);
+    const movingLeft = (xVelocity == -unitSize);
+    const movingRight = (xVelocity == unitSize);
+
+    if (keyDown == leftKey && !movingRight) { //Prevents us from overlapping head and rest of body which leads to a game over
+        xVelocity = -unitSize;
+        yVelocity = 0;
+    } else if (keyDown == rightKey && !movingLeft) {
+        xVelocity = unitSize;
+        yVelocity = 0;
+    } else if (keyDown == upKey && !movingDown) {
+        yVelocity = -unitSize;
+        xVelocity = 0;
+    } else if (keyDown == downKey && !movingUp) {
+        yVelocity = unitSize;
+        xVelocity = 0;
+    } else
+        return;
 
 }
 
