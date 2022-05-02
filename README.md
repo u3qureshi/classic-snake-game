@@ -1,1 +1,2 @@
 # classic-snake-game
+[LIVE PREVIEW]() A recreation of the popular classic arcade Snake game. The rules are simple, do not touch the walls and do not collide with your own slithery body. The goal is to eat the mice and collect points. The more mice you eat, the more your body elongates which makes it even more difficult to avoid self-collisions. Slither through this competitive version of Snake and survive as long as you can! 
