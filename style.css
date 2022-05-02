@@ -40,9 +40,8 @@ body {
 }
 
 #my-canvas {
-    border: 3px solid black;
-    width: 500px;
-    height: 500px;
+    border: 5px groove black;
+    background: rgba(157, 243, 157, 0.6);
 }
 
 .restart-button {
