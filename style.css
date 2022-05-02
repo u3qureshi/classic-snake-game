@@ -7,8 +7,8 @@ html {
 }
 
 * {
-    font-family: 'ArcadeClassic', sans-serif;
-    font-size: x-large;
+    font-family: 'Press Start 2P', cursive;
+    font-size: large;
 }
 
 body {
@@ -24,8 +24,8 @@ body {
 .title {
     display: flex;
     justify-content: center;
-    font-family: 'ArcadeClassic', sans-serif;
-    font-size: 80px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 50px;
     letter-spacing: 9px;
     margin: 0;
 }
@@ -35,8 +35,8 @@ body {
 }
 
 .score-text {
-    font-size: 60px;
-    margin: -10px;
+    font-size: 30px;
+    margin: 10px;
 }
 
 #my-canvas {
@@ -46,7 +46,7 @@ body {
 
 .pause-button {
     text-align: center;
-    font-size: xx-large;
+    font-size: 20px;
     transition: ease-out 0.4s;
     border: 5px ridge darkblue;
     background-color: rgba(0, 255, 255, 0.454);
@@ -81,7 +81,7 @@ body {
 
 .restart-button {
     text-align: center;
-    font-size: xx-large;
+    font-size: 30px;
     transition: ease-out 0.4s;
     border: 5px ridge darkgoldenrod;
     background-color: rgba(242, 255, 0, 0.537);
@@ -163,7 +163,7 @@ form {
     text-align: center;
     bottom: 0px;
     width: 100%;
-    font-size: 20px;
+    font-size: 17px;
     margin-bottom: 2px;
     color: black;
 }
