@@ -128,7 +128,7 @@ form {
     text-align: center;
     bottom: 0px;
     width: 100%;
-    font-size: 17px;
+    font-size: 10px;
     margin-bottom: 2px;
     color: black;
 }
@@ -148,6 +148,7 @@ form {
     transition: 0.5s;
     transform: scale(1.4);
 }
+<<<<<<< HEAD
 
 .start-game-sign {
     display: flex;
@@ -193,3 +194,5 @@ form {
     opacity: 1;
     z-index: -1;
 }
+=======
+>>>>>>> b968725bbf995b59127066e3d2f5f3ba1c267ba7
