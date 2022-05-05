@@ -178,7 +178,6 @@ function checkGameOver() {
     }
 }
 
-
 function restartGame() {
     window.location.reload();
 }

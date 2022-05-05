@@ -148,7 +148,6 @@ form {
     transition: 0.5s;
     transform: scale(1.4);
 }
-<<<<<<< HEAD
 
 .start-game-sign {
     display: flex;
@@ -194,5 +193,3 @@ form {
     opacity: 1;
     z-index: -1;
 }
-=======
->>>>>>> b968725bbf995b59127066e3d2f5f3ba1c267ba7
