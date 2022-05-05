@@ -44,41 +44,6 @@ body {
     background: rgb(195, 249, 195);
 }
 
-.pause-button {
-    text-align: center;
-    font-size: 20px;
-    transition: ease-out 0.4s;
-    border: 5px ridge darkblue;
-    background-color: rgba(0, 255, 255, 0.454);
-    position: relative;
-    z-index: 1;
-    margin: 10px;
-}
-
-.pause-button:hover {
-    cursor: pointer;
-}
-
-.pause-button::before {
-    transition: 0.5s all ease;
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    right: 50%;
-    bottom: 0%;
-    opacity: 0;
-    content: '';
-    background-color: aqua;
-}
-
-.pause-button:hover::before {
-    transition: 0.5s all ease;
-    left: 0;
-    right: 0;
-    opacity: 1;
-    z-index: -1;
-}
-
 .restart-button {
     text-align: center;
     font-size: 30px;
@@ -182,4 +147,49 @@ form {
     color: green;
     transition: 0.5s;
     transform: scale(1.4);
+}
+
+.start-game-sign {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -300px;
+    visibility: visible;
+}
+
+.pause-button {
+    text-align: center;
+    font-size: 30px;
+    transition: ease-out 0.4s;
+    border: 5px ridge darkgoldenrod;
+    background-color: rgba(242, 255, 0, 0.537);
+    position: relative;
+    z-index: 1;
+    margin: 0px;
+    display: flex;
+    align-self: center;
+}
+
+.pause-button:hover {
+    cursor: pointer;
+}
+
+.pause-button::before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    right: 50%;
+    bottom: 0%;
+    opacity: 0;
+    content: '';
+    background-color: rgb(255, 255, 0);
+}
+
+.pause-button:hover::before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
 }

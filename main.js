@@ -185,6 +185,8 @@ function restartGame() {
 
 function playGame() {
     running = true;
+    const startGameSign = document.querySelector('.start-game-sign');
+    startGameSign.style.visibility = 'hidden';
     initializeGame();
 }
 
